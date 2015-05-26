@@ -1,0 +1,12 @@
+import java.util.ArrayList;
+
+import org.opencv.core.Mat;
+
+
+public class Eigenfaces {
+
+	private Mat images;
+	
+	public Eigenfaces(ArrayList<Mat>)
+	
+}

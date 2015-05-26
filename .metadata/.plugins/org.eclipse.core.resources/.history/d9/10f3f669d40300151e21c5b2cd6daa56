@@ -1,0 +1,32 @@
+import java.util.ArrayList;
+
+import org.opencv.core.Mat;
+
+
+public class Eigenfaces {
+
+	private Mat imageMatrix;
+	private Mat meanImage;
+	
+	public Eigenfaces(ArrayList<Mat> images, ArrayList<Integer> labels){
+		
+	}
+	
+	private Mat calculateImageMatrix(ArrayList<Mat> images){
+		if(images.size() == 0)
+			throw new IllegalArgumentException("No images...");
+		
+		
+		int rows = images.get(0).rows();
+		int cols = images.get(0).cols();
+		int n = images.size();
+		Mat ret = new Mat(n, );
+		
+		for(int i = 0; i < n; i++){
+			
+		}
+		
+		return new Mat();
+	}
+	
+}

@@ -1,0 +1,19 @@
+import java.util.ArrayList;
+
+import org.opencv.core.Mat;
+
+
+public class Eigenfaces {
+
+	private Mat imageMatrix;
+	private Mat meanImage;
+	
+	public Eigenfaces(ArrayList<Mat> images, ArrayList<Integer> labels){
+		
+	}
+	
+	private Mat calculateImageMatrix(ArrayList<Mat> images){
+		return new Mat();
+	}
+	
+}
