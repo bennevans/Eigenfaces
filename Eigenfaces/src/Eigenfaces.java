@@ -3,9 +3,7 @@ import java.util.ArrayList;
 import org.opencv.core.Core;
 import org.opencv.core.CvType;
 import org.opencv.core.Mat;
-import org.opencv.highgui.Highgui;
-import org.opencv.photo.Photo;
-
+import org.opencv.core.Scalar;
 
 public class Eigenfaces {
 
@@ -13,21 +11,21 @@ public class Eigenfaces {
 	private Mat meanImage;
 	
 	public Eigenfaces(ArrayList<Mat> images){
-		
+		imageMatrix = calculateImageMatrix(images);
+		meanImage = calculateMeanImage(imageMatrix);
+		subtractMean();
 	}
 	
-	public Mat calculateImageMatrix(ArrayList<Mat> images){
+	private Mat calculateImageMatrix(ArrayList<Mat> images){
 		if(images.size() == 0)
 			throw new IllegalArgumentException("No images...");
-		if(images.get(0).type() != CvType.CV_8UC1)
+		if(images.get(0).type() != CvType.CV_64FC1)
 			throw new IllegalArgumentException("Image is not b&w");
 		
-		int rows = images.get(0).rows();
-		int cols = images.get(0).cols();
 		int d = (int)images.get(0).total();
 		int n = images.size();
 		
-		Mat ret = new Mat(d, n, CvType.CV_8UC1);
+		Mat ret = new Mat(d, n, CvType.CV_64FC1);
 		
 		for(int i = 0; i < n; i++){
 			if(images.get(i).total() != d)
@@ -40,8 +38,32 @@ public class Eigenfaces {
 		return ret;
 	}
 	
-	private Mat calculateMeanImage(ArrayList<Mat> images){
-		return new Mat();
+	private Mat calculateMeanImage(Mat imageMat){
+		int rows = imageMat.rows();
+		int cols = imageMat.cols();
+		Mat ret = Mat.zeros(rows, 1, CvType.CV_64FC1);//new Mat(rows, 1, CvType.CV_8UC1);
+		
+		for(int i = 0; i < cols; i++){			
+			Core.add(ret, imageMat.col(i), ret);
+		}
+		
+		Core.multiply(ret, new Scalar(1.0/cols),ret);
+		
+		return ret;
+	}
+	
+	private void subtractMean(){
+		Mat ret = imageMatrix.clone();
+				
+		for(int i = 0; i < ret.cols(); i++){
+			Core.subtract(ret.col(i), meanImage, ret.col(i));
+		}
+		
+		imageMatrix = ret;
+	}
+	
+	public String toString(){
+		return imageMatrix.dump();
 	}
 	
 }

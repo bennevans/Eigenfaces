@@ -22,14 +22,16 @@ public class EigenfacesMain {
 		//sort the eigenvalues descending with their corresponding eigenvectors
 	
 		
-		Mat m1 = Mat.eye(new Size(2, 2), CvType.CV_8UC1);
-		Mat m2 = Mat.eye(new Size(2, 2), CvType.CV_8UC1);
-		Core.multiply(m2, new Scalar(2), m2);
+		Mat m1 = Mat.eye(new Size(2, 2), CvType.CV_64FC1);
+		Mat m2 = Mat.eye(new Size(2, 2), CvType.CV_64FC1);
+		Mat m3 = Mat.eye(new Size(2, 2), CvType.CV_64FC1);
+		Core.multiply(m2, new Scalar(255), m2);
 		ArrayList<Mat> mats = new ArrayList<>();
 		mats.add(m1);
 		mats.add(m2);
+		mats.add(m3);
 		Eigenfaces e = new Eigenfaces(mats);
-		System.out.println(e.calculateImageMatrix(mats).dump());
+		System.out.println(e);
 	}
 	
 }
