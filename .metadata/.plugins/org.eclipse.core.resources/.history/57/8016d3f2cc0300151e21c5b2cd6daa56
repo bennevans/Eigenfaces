@@ -1,0 +1,10 @@
+
+import org.opencv.core.*;
+
+public class EigenfacesMain {
+
+	public static void main(String args[]){
+		
+	}
+	
+}

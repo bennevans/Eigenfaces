@@ -1,0 +1,12 @@
+
+
+import org.opencv.core.*;
+import org.opencv.highgui.Highgui;
+
+public class EigenfacesMain {
+
+	public static void main(String args[]){
+		Mat m = Highgui.imread("pics/Richardson.jpg");
+	}
+	
+}
