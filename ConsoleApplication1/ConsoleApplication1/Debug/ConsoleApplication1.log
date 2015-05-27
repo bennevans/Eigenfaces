@@ -1,13 +1,13 @@
-﻿Build started 5/27/2015 9:57:02 AM.
-     1>Project "C:\Robotics\Eigenfaces\ConsoleApplication1\ConsoleApplication1\ConsoleApplication1.vcxproj" on node 2 (Build target(s)).
+﻿Build started 5/27/2015 9:58:27 AM.
+     1>Project "C:\Eigenfaces\ConsoleApplication1\ConsoleApplication1\ConsoleApplication1.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt bby.cpp
          bby.cpp
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Robotics\Eigenfaces\ConsoleApplication1\Debug\ehh lmao.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Robotics\Eigenfaces\ConsoleApplication1\Debug\ehh lmao.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Robotics\Eigenfaces\ConsoleApplication1\Debug\ehh lmao.lib" /MACHINE:X86 Debug\bby.obj
-         ConsoleApplication1.vcxproj -> C:\Robotics\Eigenfaces\ConsoleApplication1\Debug\ehh lmao.exe
-     1>Done Building Project "C:\Robotics\Eigenfaces\ConsoleApplication1\ConsoleApplication1\ConsoleApplication1.vcxproj" (Build target(s)).
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Eigenfaces\ConsoleApplication1\Debug\ehh lmao.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Eigenfaces\ConsoleApplication1\Debug\ehh lmao.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Eigenfaces\ConsoleApplication1\Debug\ehh lmao.lib" /MACHINE:X86 Debug\bby.obj
+         ConsoleApplication1.vcxproj -> C:\Eigenfaces\ConsoleApplication1\Debug\ehh lmao.exe
+     1>Done Building Project "C:\Eigenfaces\ConsoleApplication1\ConsoleApplication1\ConsoleApplication1.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:06.10
+Time Elapsed 00:00:01.74
