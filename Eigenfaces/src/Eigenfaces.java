@@ -1,9 +1,7 @@
 import java.util.ArrayList;
 
 import org.opencv.core.Core;
-import org.opencv.core.CvType;
 import org.opencv.core.Mat;
-import org.opencv.highgui.Highgui;
 
 public class Eigenfaces {
 
@@ -82,10 +80,6 @@ public class Eigenfaces {
 		System.err.println("mean\n"+meanImage.reshape(0,(int)input.total()).dump());
 		System.err.println("after mean subtraction\n"+reshaped.dump());
 		System.err.println("eigenvectors\n"+eigenvectors.dump());
-		
-		eigenvectors = EigenUtil.normalize(eigenvectors);
-		reshaped = EigenUtil.normalize(reshaped);
-		
 		Core.gemm(eigenvectors, reshaped, 1, new Mat(), 0, ret);
 
 		

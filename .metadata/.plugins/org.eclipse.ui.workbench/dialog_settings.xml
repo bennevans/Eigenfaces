@@ -1,13 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.internal.QuickAccess">
-<<<<<<< HEAD
 		<item value="526" key="dialogHeight"/>
 		<item value="1025" key="dialogWidth"/>
-=======
-		<item value="759" key="dialogHeight"/>
-		<item value="1440" key="dialogWidth"/>
->>>>>>> 5773082e618bf0673e16f24740d5c964f706f4d4
 		<list key="textEntries">
 		</list>
 		<list key="orderedElements">
@@ -17,13 +12,4 @@
 		<list key="textArray">
 		</list>
 	</section>
-<<<<<<< HEAD
-	<section name="NewWizardAction">
-		<item value="org.eclipse.jdt.ui.wizards.JavaProjectWizard" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
-		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
-			<item value="org.eclipse.jdt.ui.java"/>
-		</list>
-	</section>
-=======
->>>>>>> 5773082e618bf0673e16f24740d5c964f706f4d4
 </section>

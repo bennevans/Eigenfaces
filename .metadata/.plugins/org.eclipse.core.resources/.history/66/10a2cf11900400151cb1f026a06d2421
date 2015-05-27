@@ -1,0 +1,94 @@
+import java.util.ArrayList;
+
+import org.opencv.core.Core;
+import org.opencv.core.Mat;
+
+public class Eigenfaces {
+
+	private Mat imageMatrix;
+	private Mat meanImage;
+	private Mat eigenvectors;
+	
+	public Eigenfaces(ArrayList<Mat> images){
+		imageMatrix = calculateImageMatrix(images);
+		calculatePCA();
+	}
+	
+	private Mat asRowMatrix(Mat image){
+		int d = (int)image.total();
+		Mat ret = new Mat(1,d, EigenUtil.TYPE);
+		image.reshape(0,1).copyTo(ret);
+		return ret;
+	}
+	
+	private Mat asColumnMatrix(Mat image){
+		int d = (int) image.total();
+		Mat ret = new Mat(d,1, EigenUtil.TYPE);
+		image.reshape(0,d).copyTo(ret);
+		return ret;
+	}
+	
+	private ArrayList<Mat> rowsMatrixToArrayList(Mat m){
+		ArrayList<Mat> ret = new ArrayList<>();
+		for(int i = 0; i < m.rows(); i++){
+			ret.add(m.row(i));
+		}
+		return ret;
+	}
+	
+	public ArrayList<Mat> getEigenvectors(){
+		return rowsMatrixToArrayList(eigenvectors);
+	}
+	
+	private Mat calculateImageMatrix(ArrayList<Mat> images){
+		if(images.size() == 0)
+			throw new IllegalArgumentException("No images...");
+		if(images.get(0).channels()!=1)
+			throw new IllegalArgumentException("Image is not b&w");
+		
+		int d = (int)images.get(0).total();
+		int n = images.size();
+		
+		Mat ret = new Mat(n, d, EigenUtil.TYPE);
+		
+		for(int i = 0; i < n; i++){
+			if(images.get(i).total() != d)
+				throw new IllegalArgumentException("Images are not the same size");
+			
+			Mat row = ret.row(i);
+			asRowMatrix(images.get(i)).copyTo(row);
+			
+		}
+		
+		return ret;
+	}
+	
+	private void calculatePCA(){
+		meanImage = new Mat();
+		eigenvectors = new Mat();
+		Core.PCACompute(imageMatrix, meanImage, eigenvectors);
+	}
+	
+	public Mat project(Mat input){
+		Mat ret = new Mat();
+		Mat reshaped = asColumnMatrix(input);
+		
+		System.err.println("before mean sub\n"+reshaped.dump());
+		
+		Core.subtract(reshaped, meanImage.reshape(0,(int)input.total()), reshaped);
+		
+		System.err.println("mean\n"+meanImage.reshape(0,(int)input.total()).dump());
+		System.err.println("after mean subtraction\n"+reshaped.dump());
+		System.err.println("eigenvectors\n"+eigenvectors.dump());
+
+		Core.gemm(eigenvectors, reshaped, 1, new Mat(), 0, ret);
+
+		
+		return ret;
+	}
+	
+	public String toString(){
+		return String.format("T:\n%s\nEigen:\n%s\nMean:\n%s\n",imageMatrix.dump(), eigenvectors.dump(), meanImage.dump());
+	}
+	
+}
