@@ -27,8 +27,7 @@ int main() {
 
 	Eigenface e(images); 
 	std::cout << "29" << std::endl;
-	cv::Mat m4_r(1, 4, m4.type());
-	eigen::singleAsRowMatrix(cv::Mat(), 0);
+	cv::Mat m4_r = eigen::singleAsRowMatrix(m4, 0);
 	std::cout << "31" << std::endl;
 	std::cout << e.project(m4) << std::endl;
 	std::cout << "33" << std::endl;
