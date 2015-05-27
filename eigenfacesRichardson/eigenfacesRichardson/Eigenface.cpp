@@ -14,15 +14,6 @@ Eigenface::~Eigenface()
 {
 }
 
-<<<<<<< HEAD
-void Eigenface::compute() { 
-	
-
-}
-
-cv::Mat::Eigenface project(cv::Mat) {
-
-=======
 void Eigenface::compute(std::vector<cv::Mat> images){
 
 	if (images.size() == 0)
@@ -85,6 +76,5 @@ cv::Mat Eigenface::project(cv::Mat image){
 
 	gemm(X, W, 1.0, cv::Mat(), 0.0, Y);
 	return Y;
->>>>>>> 3b5c589088c568c9eb40210c239121500d599832
 
 }
