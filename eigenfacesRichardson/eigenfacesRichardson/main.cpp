@@ -12,8 +12,7 @@ int main() {
 	cv::Mat m2(2, 2, CV_64FC1);
 	cv::Mat m3(2, 2, CV_64FC1);
 
-	m1 = cv::Mat::zeros(cv::Size(2, 2), CV_64FC1);
-	m1.at<double>(1,1,0) = 100;
+	m1 = cv::Mat::eye(cv::Size(2, 2), CV_64FC1)*6 + cv::Mat::ones(cv::Size(2, 2), CV_64FC1)*5;
 	m2.setTo(cv::Scalar(255));
 	m3 = cv::Mat::eye(cv::Size(2, 2), CV_64FC1) * 255 / 2;
 
