@@ -1,9 +1,0 @@
-import org.opencv.core.Mat;
-
-
-public class Eigenfaces {
-
-	private Mat images;
-	
-	
-}

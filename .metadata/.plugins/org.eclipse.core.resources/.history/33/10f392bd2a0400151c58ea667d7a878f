@@ -1,0 +1,10 @@
+import org.opencv.core.Core;
+
+
+public class EigenUtil {
+
+	public static Mat normalize(Mat src){
+		Mat ret;
+		Core.normalize(src, dst);
+	}
+}

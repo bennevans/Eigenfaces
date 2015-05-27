@@ -1,0 +1,17 @@
+import org.opencv.core.Core;
+import org.opencv.core.CvType;
+import org.opencv.core.Mat;
+
+
+public class EigenUtil {
+
+	public static Mat normalize(Mat src){
+		Mat ret = new Mat();
+		Core.normalize(src, ret, 0, 255, Core.NORM_MINMAX, CvType.CV_8UC1);
+		return ret;
+	}
+	
+	public static void imshow(Mat image){
+		
+	}
+}
