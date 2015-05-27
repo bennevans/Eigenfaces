@@ -1,0 +1,31 @@
+import org.opencv.core.Core;
+import org.opencv.core.CvType;
+import org.opencv.core.Mat;
+
+
+public class EigenUtil {
+
+	public static Mat normalize(Mat src){
+		Mat ret = new Mat();
+		Core.normalize(src, ret, 0, 255, Core.NORM_MINMAX, CvType.CV_8UC1);
+		return ret;
+	}
+	
+	public static void imshow(Mat image){
+		   Imgproc.resize(img, img, new Size(640, 480));
+		    MatOfByte matOfByte = new MatOfByte();
+		    Highgui.imencode(".jpg", img, matOfByte);
+		    byte[] byteArray = matOfByte.toArray();
+		    BufferedImage bufImage = null;
+		    try {
+		        InputStream in = new ByteArrayInputStream(byteArray);
+		        bufImage = ImageIO.read(in);
+		        JFrame frame = new JFrame();
+		        frame.getContentPane().add(new JLabel(new ImageIcon(bufImage)));
+		        frame.pack();
+		        frame.setVisible(true);
+		    } catch (Exception e) {
+		        e.printStackTrace();
+		    }
+	}
+}
