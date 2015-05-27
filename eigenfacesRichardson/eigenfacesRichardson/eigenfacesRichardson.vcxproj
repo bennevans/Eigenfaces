@@ -43,6 +43,8 @@
     <LinkIncremental>true</LinkIncremental>
     <IncludePath>C:\OpenCV-2.4.10\build\include;$(IncludePath)</IncludePath>
     <LibraryPath>C:\OpenCV-2.4.10\build\x86\vc11\lib;$(LibraryPath)</LibraryPath>
+    <ExecutablePath>C:\OpenCV-2.4.10\build\x86\vc11\bin;$(ExecutablePath)</ExecutablePath>
+    <LibraryWPath>C:\OpenCV-2.4.10\build\x86\vc11\bin;$(LibraryWPath)</LibraryWPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
