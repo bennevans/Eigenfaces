@@ -47,7 +47,7 @@ public class Eigenfaces {
 		Mat ret = new Mat();
 		ArrayList<Mat> matar = new ArrayList<>();
 		matar.add(input);
-		Mat reshaped = calculateImageMatrix(matar); //MAKE COLUM VECTOR
+		Mat reshaped = calculateImageMatrix(matar);
 		
 		for(int i = 0; i < input.rows(); i++){
 			Mat r = eigenvectors.row(i);
