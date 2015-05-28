@@ -12,10 +12,9 @@ int main() {
 	cv::Mat m2(2, 2, CV_64FC1);
 	cv::Mat m3(2, 2, CV_64FC1);
 
-	m1.setTo(cv::Scalar(0));
+	m1 = cv::Mat::eye(cv::Size(2, 2), CV_64FC1)*6 + cv::Mat::ones(cv::Size(2, 2), CV_64FC1)*5;
 	m2.setTo(cv::Scalar(255));
-	m3 = cv::Mat::eye(cv::Size(2, 2), CV_64FC1) * 255 / 2 - 1;
-	cv::Mat m4 = m3.clone();
+	m3 = cv::Mat::eye(cv::Size(2, 2), CV_64FC1) * 255 / 2;
 
 	images.push_back(m1);
 	images.push_back(m2);
@@ -26,11 +25,17 @@ int main() {
 	std::cout << m3 << std::endl;
 
 	Eigenface e(images); 
-	std::cout << "29" << std::endl;
-	cv::Mat m4_r = eigen::singleAsRowMatrix(m4, 0);
-	std::cout << "31" << std::endl;
-	std::cout << e.project(m4) << std::endl;
-	std::cout << "33" << std::endl;
+
+	std::cout << "eigen values\n" << e.eigenvalues << std::endl;
+	std::cout << "eigen vectors\n" << e.eigenvectors << std::endl;
+
+	cv::Mat m4_r = eigen::singleAsRowMatrix(m3, m3.type());
+	std::cout << "row matrix: " << m4_r << std::endl;
+	m4_r = e.project(m4_r);
+	std::cout << "project: " << m4_r << std::endl;
+	cv::normalize(m4_r, m4_r, 0, 255, CV_MINMAX);
+	std::cout << "normalized: " << m4_r << std::endl;
+
 
 	getchar();
 	return 0;
