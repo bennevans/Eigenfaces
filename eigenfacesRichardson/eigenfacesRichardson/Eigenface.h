@@ -16,6 +16,7 @@ public:
 
 	void compute(std::vector<cv::Mat>);
 	cv::Mat project(cv::Mat);
+	cv::Mat reconstruct(cv::Mat);
 
 	cv::Mat meanImage;
 	cv::Mat eigenvectors;

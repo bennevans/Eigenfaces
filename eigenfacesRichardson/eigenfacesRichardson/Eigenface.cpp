@@ -56,5 +56,27 @@ cv::Mat Eigenface::project(cv::Mat image){
 
 	gemm(X, W, 1.0, cv::Mat(), 0.0, Y);
 	return Y;
+}
 
+cv::Mat Eigenface::reconstruct(cv::Mat image){
+	cv::Mat W = eigenvectors;
+	cv::Mat mean = meanImage;
+
+	int n = image.rows;
+	int d = image.cols;
+
+	if (W.cols != d){
+		CV_Error(CV_StsBadSize,"Wrong Mat size");
+	}
+
+	cv::Mat X, Y;
+	image.convertTo(Y, W.type());
+	gemm(Y, W, 1.0, cv::Mat(), 0.0, X, cv::GEMM_2_T);
+
+	for (int i = 0; i < n; i++){
+		cv::Mat r_i = X.row(i);
+		add(r_i, mean.reshape(1, 1), r_i);
+	}
+
+	return X;
 }

@@ -14,7 +14,7 @@ int main() {
 
 	m1 = cv::Mat::eye(cv::Size(2, 2), CV_64FC1)*6 + cv::Mat::ones(cv::Size(2, 2), CV_64FC1)*5;
 	m2.setTo(cv::Scalar(255));
-	m3 = cv::Mat::eye(cv::Size(2, 2), CV_64FC1) * 255 / 2;
+	m3 = cv::Mat::eye(cv::Size(2, 2), CV_64FC1) * 255 / 2 + 2*cv::Mat::ones(cv::Size(2,2), CV_64FC1);
 
 	images.push_back(m1);
 	images.push_back(m2);
@@ -33,9 +33,13 @@ int main() {
 	std::cout << "row matrix: " << m4_r << std::endl;
 	m4_r = e.project(m4_r);
 	std::cout << "project: " << m4_r << std::endl;
+	cv::Mat tmp = m4_r.clone();
+	tmp = e.reconstruct(m4_r);
 	cv::normalize(m4_r, m4_r, 0, 255, CV_MINMAX);
 	std::cout << "normalized: " << m4_r << std::endl;
-
+	std::cout << "reconstructed: " << tmp << std::endl;
+	cv::normalize(tmp, tmp, 0, 255, CV_MINMAX);
+	std::cout << "normalized: " << tmp << std::endl;
 
 	getchar();
 	return 0;
