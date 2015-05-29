@@ -1,23 +1,17 @@
-<<<<<<< HEAD
-﻿Build started 5/28/2015 9:43:35 AM.
+﻿Build started 5/29/2015 9:35:38 AM.
      1>Project "C:\Robotics\Eigenfaces\eigenfacesRichardson\eigenfacesRichardson\eigenfacesRichardson.vcxproj" on node 2 (Build target(s)).
-=======
-﻿Build started 5/29/2015 9:25:23 AM.
-     1>Project "C:\Eigenfaces\eigenfacesRichardson\eigenfacesRichardson\eigenfacesRichardson.vcxproj" on node 2 (Build target(s)).
->>>>>>> e91c9c8096f47e88e449cb9326e0760e0f78c9ee
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt Eigenface.cpp main.cpp
          main.cpp
+         Eigenface.cpp
+         Generating Code...
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Eigenfaces\eigenfacesRichardson\Debug\eigenfacesRichardson.exe" /INCREMENTAL /NOLOGO opencv_calib3d2410.lib opencv_calib3d2410d.lib opencv_contrib2410.lib opencv_contrib2410d.lib opencv_core2410.lib opencv_core2410d.lib opencv_features2d2410.lib opencv_features2d2410d.lib opencv_flann2410.lib opencv_flann2410d.lib opencv_gpu2410.lib opencv_gpu2410d.lib opencv_highgui2410.lib opencv_highgui2410d.lib opencv_imgproc2410.lib opencv_imgproc2410d.lib opencv_legacy2410.lib opencv_legacy2410d.lib opencv_ml2410.lib opencv_ml2410d.lib opencv_nonfree2410.lib opencv_nonfree2410d.lib opencv_objdetect2410.lib opencv_objdetect2410d.lib opencv_ocl2410.lib opencv_ocl2410d.lib opencv_photo2410.lib opencv_photo2410d.lib opencv_stitching2410.lib opencv_stitching2410d.lib opencv_superres2410.lib opencv_superres2410d.lib opencv_ts2410.lib opencv_ts2410d.lib opencv_video2410.lib opencv_video2410d.lib opencv_videostab2410.lib opencv_videostab2410d.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Eigenfaces\eigenfacesRichardson\Debug\eigenfacesRichardson.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Eigenfaces\eigenfacesRichardson\Debug\eigenfacesRichardson.lib" /MACHINE:X86 Debug\Eigenface.obj
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Robotics\Eigenfaces\eigenfacesRichardson\Debug\eigenfacesRichardson.exe" /INCREMENTAL /NOLOGO opencv_calib3d2410.lib opencv_calib3d2410d.lib opencv_contrib2410.lib opencv_contrib2410d.lib opencv_core2410.lib opencv_core2410d.lib opencv_features2d2410.lib opencv_features2d2410d.lib opencv_flann2410.lib opencv_flann2410d.lib opencv_gpu2410.lib opencv_gpu2410d.lib opencv_highgui2410.lib opencv_highgui2410d.lib opencv_imgproc2410.lib opencv_imgproc2410d.lib opencv_legacy2410.lib opencv_legacy2410d.lib opencv_ml2410.lib opencv_ml2410d.lib opencv_nonfree2410.lib opencv_nonfree2410d.lib opencv_objdetect2410.lib opencv_objdetect2410d.lib opencv_ocl2410.lib opencv_ocl2410d.lib opencv_photo2410.lib opencv_photo2410d.lib opencv_stitching2410.lib opencv_stitching2410d.lib opencv_superres2410.lib opencv_superres2410d.lib opencv_ts2410.lib opencv_ts2410d.lib opencv_video2410.lib opencv_video2410d.lib opencv_videostab2410.lib opencv_videostab2410d.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Robotics\Eigenfaces\eigenfacesRichardson\Debug\eigenfacesRichardson.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Robotics\Eigenfaces\eigenfacesRichardson\Debug\eigenfacesRichardson.lib" /MACHINE:X86 Debug\Eigenface.obj
          Debug\main.obj
-         eigenfacesRichardson.vcxproj -> C:\Eigenfaces\eigenfacesRichardson\Debug\eigenfacesRichardson.exe
-     1>Done Building Project "C:\Eigenfaces\eigenfacesRichardson\eigenfacesRichardson\eigenfacesRichardson.vcxproj" (Build target(s)).
+         LINK : C:\Robotics\Eigenfaces\eigenfacesRichardson\Debug\eigenfacesRichardson.exe not found or not built by the last incremental link; performing full link
+         eigenfacesRichardson.vcxproj -> C:\Robotics\Eigenfaces\eigenfacesRichardson\Debug\eigenfacesRichardson.exe
+     1>Done Building Project "C:\Robotics\Eigenfaces\eigenfacesRichardson\eigenfacesRichardson\eigenfacesRichardson.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-<<<<<<< HEAD
-Time Elapsed 00:00:02.38
-=======
-Time Elapsed 00:00:02.74
->>>>>>> e91c9c8096f47e88e449cb9326e0760e0f78c9ee
+Time Elapsed 00:00:04.17
