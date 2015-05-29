@@ -1,5 +1,10 @@
+<<<<<<< HEAD
+﻿Build started 5/28/2015 9:43:35 AM.
+     1>Project "C:\Robotics\Eigenfaces\eigenfacesRichardson\eigenfacesRichardson\eigenfacesRichardson.vcxproj" on node 2 (Build target(s)).
+=======
 ﻿Build started 5/29/2015 9:25:23 AM.
      1>Project "C:\Eigenfaces\eigenfacesRichardson\eigenfacesRichardson\eigenfacesRichardson.vcxproj" on node 2 (Build target(s)).
+>>>>>>> e91c9c8096f47e88e449cb9326e0760e0f78c9ee
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
          main.cpp
@@ -11,4 +16,8 @@
 
 Build succeeded.
 
+<<<<<<< HEAD
+Time Elapsed 00:00:02.38
+=======
 Time Elapsed 00:00:02.74
+>>>>>>> e91c9c8096f47e88e449cb9326e0760e0f78c9ee

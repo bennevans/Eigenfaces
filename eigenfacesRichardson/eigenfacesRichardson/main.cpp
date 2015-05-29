@@ -34,7 +34,12 @@ int main() {
 	std::cout << "eigen values\n" << e.eigenvalues << std::endl;
 	std::cout << "eigen vectors\n" << e.eigenvectors << std::endl;
 
-	cv::Mat m4_r = eigen::singleAsRowMatrix(m3, m3.type());
+	double m4_data[] = { 136.5, 258, 258, 136.5 };
+	cv::Mat m4 = cv::Mat(2, 2, CV_64FC1, m4_data).clone();
+
+	cv::Mat m4_r = eigen::singleAsRowMatrix(m4, m4.type());
+
+	std::cout << "m4:\n" << m4 << std::endl;
 	std::cout << "row matrix: " << m4_r << std::endl;
 	m4_r = e.project(m4_r);
 	std::cout << "project: " << m4_r << std::endl;
@@ -43,8 +48,6 @@ int main() {
 	cv::normalize(m4_r, m4_r, 0, 255, CV_MINMAX);
 	std::cout << "normalized: " << m4_r << std::endl;
 	std::cout << "reconstructed: " << tmp << std::endl;
-	cv::normalize(tmp, tmp, 0, 255, CV_MINMAX);
-	std::cout << "normalized: " << tmp << std::endl;
 
 	getchar();
 	return 0;
