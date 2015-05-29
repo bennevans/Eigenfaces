@@ -8,9 +8,14 @@ int main() {
 
 	std::vector<cv::Mat> images;
 
+	cv::Mat m23 = cv::imread("c:\\Eigenfaces\\Eigenfaceslapics\\Richardson.jpg", 0); 
+	if(m23.empty()) {  
+		return -1;
+	}
 	cv::Mat m1(2, 2, CV_64FC1);
 	cv::Mat m2(2, 2, CV_64FC1);
 	cv::Mat m3(2, 2, CV_64FC1);
+
 
 	m1 = cv::Mat::eye(cv::Size(2, 2), CV_64FC1)*6 + cv::Mat::ones(cv::Size(2, 2), CV_64FC1)*5;
 	m2.setTo(cv::Scalar(255));
@@ -20,9 +25,9 @@ int main() {
 	images.push_back(m2);
 	images.push_back(m3);
 
-	std::cout << m1 << std::endl;
-	std::cout << m2 << std::endl;
-	std::cout << m3 << std::endl;
+	//std::cout << m1 << std::endl;
+	//std::cout << m2 << std::endl;
+	std::cout << m23 << std::endl;
 
 	Eigenface e(images); 
 
