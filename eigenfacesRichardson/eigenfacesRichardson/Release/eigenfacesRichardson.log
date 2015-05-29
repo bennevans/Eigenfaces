@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿Build started 5/29/2015 9:33:32 AM.
      1>Project "C:\Robotics\Eigenfaces\eigenfacesRichardson\eigenfacesRichardson\eigenfacesRichardson.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
@@ -15,3 +16,14 @@
 Build succeeded.
 
 Time Elapsed 00:00:18.12
+=======
+﻿Build started 5/29/2015 9:34:49 AM.
+     1>Project "C:\Eigenfaces\eigenfacesRichardson\eigenfacesRichardson\eigenfacesRichardson.vcxproj" on node 2 (Build target(s)).
+     1>Link:
+         eigenfacesRichardson.vcxproj -> C:\Eigenfaces\eigenfacesRichardson\Release\eigenfacesRichardson.exe
+     1>Done Building Project "C:\Eigenfaces\eigenfacesRichardson\eigenfacesRichardson\eigenfacesRichardson.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.06
+>>>>>>> 2c4e6af6513d89fc49f2217b94c3ab8d21bb67b1
