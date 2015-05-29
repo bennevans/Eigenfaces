@@ -8,9 +8,9 @@ int main() {
 
 	std::vector<cv::Mat> images;
 
-	cv::Mat m23 = cv::imread("c:\\Eigenfaces\\Eigenfaceslapics\\Richardson.jpg", 0); 
-	if(m23.empty()) {  
-		return -1;
+	cv::Mat m23 = cv::imread("Richardson.jpg", 0); 
+	if(m23.empty()) { 
+				std::cout << "EMPTY RICHARDSON" << std::endl;
 	}
 	cv::Mat m1(2, 2, CV_64FC1);
 	cv::Mat m2(2, 2, CV_64FC1);
