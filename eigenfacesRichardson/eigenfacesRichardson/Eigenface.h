@@ -21,6 +21,8 @@ public:
 	cv::Mat meanImage;
 	cv::Mat eigenvectors;
 	cv::Mat eigenvalues;
+
+	std::vector<cv::Mat> eigenFaces();
 };
 
 #endif

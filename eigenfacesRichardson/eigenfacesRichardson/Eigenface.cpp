@@ -80,3 +80,18 @@ cv::Mat Eigenface::reconstruct(cv::Mat image){
 
 	return X;
 }
+
+
+std::vector<cv::Mat> Eigenface::eigenFaces(){
+	std::vector<cv::Mat> ret;
+
+	for (int i = 0; i < eigenvectors.cols; i++){
+		cv::Mat col = eigenvectors.col(i);
+		cv::Mat tmp = col.clone();
+		cv::Mat tmp2 = tmp.reshape(0, 100);
+		ret.push_back(tmp2);
+	}
+
+	return ret;
+
+}
