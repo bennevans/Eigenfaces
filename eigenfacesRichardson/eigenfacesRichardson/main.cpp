@@ -10,7 +10,7 @@ int main() {
 	cv::Mat richardson = cv::imread("faces/b0.png");
 	cv::cvtColor(richardson, richardson, CV_64FC1);
 
-	for (int i = 1; i <= 10; i++){
+	for (int i = 0; i <= 10; i++){
 
 		std::string path = "faces/b" + std::to_string(i) + ".png";
 		cv::Mat im = cv::imread(path);
@@ -48,7 +48,7 @@ int main() {
 	cv::Mat imageCombo(100, 75, CV_8UC1);
 
 	for (int i = 0; i < projection.cols; i++){
-		cv::Mat single = e.eigenFaces()[0]*projection.at<double>(0,i);
+		cv::Mat single = e.eigenFaces()[i]*projection.at<double>(0,i);
 		proj = proj + single;
 	}
 
