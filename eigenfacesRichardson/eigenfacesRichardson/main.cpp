@@ -60,6 +60,5 @@ int main() {
 	cv::imshow("Richardson", richardson);
 
 	cv::waitKey(0);
-
 	return 0;
 }
