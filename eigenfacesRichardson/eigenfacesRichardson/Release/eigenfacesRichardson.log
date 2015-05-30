@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ﻿Build started 5/29/2015 5:39:09 PM.
+=======
+﻿Build started 5/29/2015 5:52:04 PM.
+>>>>>>> 6b9d973e288e90a3fb8fcdafe91785e9c7799469
      1>Project "C:\Robotics\Eigenfaces\eigenfacesRichardson\eigenfacesRichardson\eigenfacesRichardson.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          E:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
@@ -8,4 +12,8 @@
 
 Build FAILED.
 
+<<<<<<< HEAD
 Time Elapsed 00:00:00.28
+=======
+Time Elapsed 00:00:02.40
+>>>>>>> 6b9d973e288e90a3fb8fcdafe91785e9c7799469
