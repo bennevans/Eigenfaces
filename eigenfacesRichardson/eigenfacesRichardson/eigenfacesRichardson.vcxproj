@@ -48,8 +48,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>C:\OpenCV-2.4.10\build\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\OpenCV-2.4.10\build\x86\vc11\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\OpenCV-2.4.10\build\include;E:\OpenCV-2.4.10\build\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\OpenCV-2.4.10\build\x86\vc11\lib;E:\OpenCV-2.4.10\build\x86\vc11\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
