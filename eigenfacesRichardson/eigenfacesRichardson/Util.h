@@ -10,6 +10,8 @@
 namespace eigen{
 	inline cv::Mat asRowMatrix(const std::vector<cv::Mat> images, int type){
 
+		std::cout << "asRowMatrix" << std::endl;
+
 		int n = images.size();
 
 		if (n == 0)
@@ -18,6 +20,8 @@ namespace eigen{
 		int d = images[0].total();
 
 		cv::Mat data(n, d, type);
+
+		std::cout << "converting..." << std::endl;
 
 		for (int i = 0; i < n; i++){
 			if (images[i].total() != d)

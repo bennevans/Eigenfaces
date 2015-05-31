@@ -4,6 +4,76 @@
 #include "Eigenface.h"
 #include <iostream>
 
+#define final 1
+
+#if final
+
+int main(){
+
+	std::vector<cv::Mat> allFaces;
+	
+	for (int i = 0; i <= 10; i++){
+		std::string path = "faces/b" + std::to_string(i) + ".png";
+		cv::Mat im = cv::imread(path);
+		std::cout << "loading: " << path << " Isloaded: " << !im.empty() << std::endl;
+
+		cv::cvtColor(im, im, CV_64FC1);
+		allFaces.push_back(im);
+	}
+
+	for (int i = 0; i < 10; i++){
+
+		std::cout << "loop: " << i << std::endl;
+
+		std::cout << "copying matrix" << std::endl;
+		std::vector<cv::Mat> someFaces = allFaces;
+		std::cout << "erasing ith element" << std::endl;
+		someFaces.erase(someFaces.begin() + i);
+		std::cout << "creating eigenfaces" << std::endl;
+		Eigenface e(someFaces);
+		std::cout << "getting ith face" << std::endl;
+		cv::Mat face = allFaces[i];
+		std::cout << "converting to row Matrix" << std::endl;
+		cv::Mat faceRow = eigen::singleAsRowMatrix(face, face.type());
+		std::cout << "projecting" << std::endl;
+		cv::Mat faceProj = e.project(faceRow);
+		std::cout << "normalizing" << std::endl;
+		std::cout << "constants before normalization: " << faceProj << std::endl;
+		cv::normalize(faceProj, faceProj, 0, 255, CV_MINMAX);
+
+		cv::Mat proj(100, 75, CV_64FC1);
+
+		std::cout << "adding images together with constants " << faceProj << std::endl;
+
+		for (int j = 0; j < faceProj.cols; j++){
+			cv::Mat single = e.eigenFaces()[j] * faceProj.at<double>(0, j);
+			proj = proj + single;
+		}
+
+
+		cv::normalize(proj, proj, 0,1, CV_MINMAX);
+
+		std::cout << "showing" << std::endl;
+
+		std::string projName = "Proj" + std::to_string(i) + ".png";
+
+		imshow(projName, proj);
+		imshow("Face" + std::to_string(i), face);
+
+		cv::Mat projU;
+		((cv::Mat)(255 * (proj))).convertTo(projU, CV_8UC1);
+		cv::imwrite(projName, projU);
+
+		std::cout << std::endl;
+	}
+
+	cv::waitKey(0);
+
+	return 0;
+}
+
+#else
+
 int main() { 
 
 	std::vector<cv::Mat> images;
@@ -62,3 +132,5 @@ int main() {
 	cv::waitKey(0);
 	return 0;
 }
+
+#endif
