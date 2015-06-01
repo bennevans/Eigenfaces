@@ -11,17 +11,23 @@
 int main(){
 
 	std::vector<cv::Mat> allFaces;
+
+	int faceMax = 10;
 	
-	for (int i = 0; i <= 10; i++){
+
+
+	for (int i = 0; i <= faceMax; i++){
 		std::string path = "faces/b" + std::to_string(i) + ".png";
 		cv::Mat im = cv::imread(path);
 		std::cout << "loading: " << path << " Isloaded: " << !im.empty() << std::endl;
-
+		 
 		cv::cvtColor(im, im, CV_64FC1);
 		allFaces.push_back(im);
 	}
 
-	for (int i = 0; i < 10; i++){
+	std::cout << "loaded " << allFaces.size() << " faces";
+
+	for (int i = 0; i <= faceMax; i++){
 
 		std::cout << "loop: " << i << std::endl;
 
@@ -29,7 +35,7 @@ int main(){
 		std::vector<cv::Mat> someFaces = allFaces;
 		std::cout << "erasing ith element" << std::endl;
 		someFaces.erase(someFaces.begin() + i);
-		std::cout << "creating eigenfaces" << std::endl;
+		std::cout << "creating " << someFaces.size() << " eigenfaces" << std::endl;
 		Eigenface e(someFaces);
 		std::cout << "getting ith face" << std::endl;
 		cv::Mat face = allFaces[i];
@@ -39,11 +45,19 @@ int main(){
 		cv::Mat faceProj = e.project(faceRow);
 		std::cout << "normalizing" << std::endl;
 		std::cout << "constants before normalization: " << faceProj << std::endl;
+		cv::Mat reconstruct_row = e.reconstruct(faceProj);
+
+		std::cout << reconstruct_row.rows << " " << reconstruct_row.cols << std::endl;
+		cv::Mat reconstruct = reconstruct_row.reshape(0, 100);
+
+
 		cv::normalize(faceProj, faceProj, 0, 255, CV_MINMAX);
+		cv::normalize(reconstruct, reconstruct, 0, 1, CV_MINMAX);
+
 
 		cv::Mat proj(100, 75, CV_64FC1);
 
-		std::cout << "adding images together with constants " << faceProj << std::endl;
+		std::cout << "adding images together with " << faceProj.cols << " constants " << faceProj << std::endl;
 
 		for (int j = 0; j < faceProj.cols; j++){
 			cv::Mat single = e.eigenFaces()[j] * faceProj.at<double>(0, j);
@@ -55,14 +69,20 @@ int main(){
 
 		std::cout << "showing" << std::endl;
 
-		std::string projName = "Proj" + std::to_string(i) + ".png";
+		std::string projName = "game/Proj" + std::to_string(i) + ".png";
+		std::string reconName = "recon/"+ std::to_string(i) + ".png";
 
-		imshow(projName, proj);
-		imshow("Face" + std::to_string(i), face);
 
 		cv::Mat projU;
 		((cv::Mat)(255 * (proj))).convertTo(projU, CV_8UC1);
+		cv::Mat recU;
+		(((cv::Mat)(255 * reconstruct))).convertTo(recU, CV_8UC1);
+
+		//imshow(projName, projU);
+		imshow("Face" + std::to_string(i), face);
+		imshow("Rec" + std::to_string(i), recU);
 		cv::imwrite(projName, projU);
+		cv::imwrite(reconName, recU);
 
 		std::cout << std::endl;
 	}
