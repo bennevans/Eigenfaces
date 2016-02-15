@@ -72,7 +72,7 @@ int main(){
 		std::string projName = "game/Proj" + std::to_string(i) + ".png";
 		std::string reconName = "recon/"+ std::to_string(i) + ".png";
 
-
+		//upscale from 0-1 to 0-255
 		cv::Mat projU;
 		((cv::Mat)(255 * (proj))).convertTo(projU, CV_8UC1);
 		cv::Mat recU;
@@ -86,6 +86,27 @@ int main(){
 
 		std::cout << std::endl;
 	}
+
+	cv::waitKey(0);
+
+	Eigenface e(allFaces);
+
+	for(int i = 0; i <= faceMax; i++){
+		std::string name = "eigen/"+std::to_string(i)+".png";
+
+		cv::Mat eigenFace = e.eigenFaces()[i];
+		cv::Mat eigenU;
+		cv::normalize(eigenFace, eigenU, 0, 255, cv::NORM_MINMAX, CV_8UC1);
+
+
+		std::cout << eigenFace << std::endl;
+		std::cout << eigenU << std::endl;
+
+		cv::imshow(name, eigenU);
+		cv::imwrite(name, eigenU);
+
+	}
+
 
 	cv::waitKey(0);
 

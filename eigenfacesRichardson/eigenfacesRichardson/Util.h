@@ -4,8 +4,8 @@
 #define EIGEN_UTIL_H
 
 #include <vector>
-#include <opencv2\opencv.hpp>
-
+//#include <opencv2\opencv.hpp>
+#include <opencv2/opencv.hpp>
 
 namespace eigen{
 	inline cv::Mat asRowMatrix(const std::vector<cv::Mat> images, int type){
